@@ -1,0 +1,10 @@
+.stats { padding-block: clamp(100px, 14vw, 200px); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 48px; }
+.item { display: grid; gap: 10px; border-top: 1px solid rgba(155, 148, 138, 0.25); padding-top: 22px; }
+.num {
+  font-size: clamp(96px, 16vw, 240px);
+  background: linear-gradient(180deg, var(--paper), #6b6259);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}

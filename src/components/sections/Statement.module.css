@@ -1,0 +1,10 @@
+.statement { padding-block: clamp(120px, 18vw, 260px); }
+.text {
+  margin-top: 28px;
+  font-size: clamp(38px, 7vw, 118px);
+  line-height: 0.95;
+  max-width: 16ch;
+  text-transform: uppercase;
+}
+.text span span { display: inline-block; white-space: pre; }
+.accent { color: var(--ember); text-transform: none; font-size: 1.08em; }

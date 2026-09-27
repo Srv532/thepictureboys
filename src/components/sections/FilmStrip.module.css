@@ -1,0 +1,63 @@
+.strip {
+  position: relative;
+  height: 100svh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+.label {
+  position: absolute;
+  top: clamp(80px, 12vh, 140px);
+  left: var(--gutter);
+  z-index: 2;
+  display: grid;
+  gap: 8px;
+}
+.label h2 { font-size: clamp(44px, 7vw, 110px); }
+.track {
+  display: flex;
+  gap: 6px;
+  padding: 90px var(--gutter) 0 max(var(--gutter), 34vw);
+  will-change: transform;
+}
+.native .track { overflow-x: auto; scroll-snap-type: x mandatory; padding-left: var(--gutter); width: 100%; }
+.native .frame { scroll-snap-align: center; }
+.frame {
+  position: relative;
+  flex: 0 0 auto;
+  width: clamp(240px, 30vw, 460px);
+  background: #0c0c0c;
+  padding: 0 10px;
+  display: grid;
+  gap: 8px;
+  transform-origin: center;
+}
+.holes {
+  height: 22px;
+  background-image: radial-gradient(circle at center, transparent 0, transparent 0),
+    linear-gradient(90deg, transparent 0 8px, #e9e2d6 8px 22px, transparent 22px 30px);
+  background-size: 30px 12px;
+  background-repeat: repeat-x;
+  background-position: 0 center;
+  opacity: 0.85;
+  mask: linear-gradient(90deg, #000, #000);
+  border-radius: 2px;
+}
+.photo {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 3px;
+}
+.photo img { transition: transform 1s var(--ease-out), filter 0.6s; filter: saturate(0.85); }
+.frame:hover .photo img { transform: scale(1.06); filter: saturate(1.1); }
+.caption {
+  position: absolute;
+  bottom: -30px;
+  left: 10px;
+  font: 500 12px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.caption b { color: var(--ember); margin-right: 6px; }

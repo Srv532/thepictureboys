@@ -1,0 +1,3 @@
+.hero { padding-top: clamp(140px, 18vw, 240px); padding-bottom: clamp(20px, 4vw, 40px); display: grid; gap: 18px; }
+.title { font-size: clamp(72px, 15vw, 270px); }
+.lede { font-size: clamp(24px, 3vw, 46px); max-width: 24ch; opacity: 0.8; }

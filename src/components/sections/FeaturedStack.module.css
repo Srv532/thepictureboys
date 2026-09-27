@@ -1,0 +1,36 @@
+.section { padding-block: clamp(80px, 10vw, 140px) clamp(40px, 6vw, 80px); }
+.head { display: grid; gap: 14px; margin-bottom: clamp(32px, 5vw, 64px); }
+.title { font-size: clamp(56px, 11vw, 180px); }
+.stack { position: relative; }
+.slot { position: sticky; height: 80vh; margin-bottom: 8vh; }
+.slot:last-child { margin-bottom: 0; }
+.card {
+  height: 100%;
+  border-radius: 14px;
+  overflow: hidden;
+  transform-origin: 50% 0%;
+  background: #000;
+  will-change: transform, filter;
+}
+.link { position: relative; display: block; height: 100%; }
+.media { position: absolute; inset: 0; }
+.media img { transition: transform 1.4s var(--ease-out); }
+.link:hover .media img { transform: scale(1.05); }
+.preview {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.info {
+  position: absolute;
+  inset: auto 0 0 0;
+  padding: clamp(18px, 3vw, 40px);
+  display: grid;
+  gap: 8px;
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+  color: var(--paper);
+}
+.info h3 { font-size: clamp(40px, 7vw, 110px); }
+.idx { font: 600 13px/1 var(--font-body); letter-spacing: 0.2em; color: var(--ember); }
