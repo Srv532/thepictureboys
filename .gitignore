@@ -1,0 +1,21 @@
+# deps
+node_modules/
+
+# next
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+
+# source media (only processed output in public/media is committed)
+/media/
+
+# tests
+test-results/
+playwright-report/
+coverage/
+
+# env / os
+.env*.local
+.DS_Store
+.vercel
