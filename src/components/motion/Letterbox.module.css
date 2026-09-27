@@ -1,0 +1,12 @@
+.box { position: relative; overflow: clip; }
+.bar {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 50%;
+  background: #000;
+  z-index: 3;
+  pointer-events: none;
+}
+.top { top: 0; transform-origin: top; }
+.bottom { bottom: 0; transform-origin: bottom; }

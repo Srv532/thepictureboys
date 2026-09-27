@@ -1,0 +1,96 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 70;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: calc(18px + env(safe-area-inset-top)) var(--gutter) 18px;
+  mix-blend-mode: difference;
+  color: var(--paper);
+}
+.logo { font-size: 22px; letter-spacing: 0.01em; }
+.logo span { color: var(--ember); }
+.nav { display: flex; gap: 36px; }
+.link {
+  display: inline-block;
+  font: 500 13px/1 var(--font-body);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease-out);
+}
+.link span {
+  display: inline-block;
+  position: relative;
+  transition: transform 0.5s var(--ease-out);
+}
+.link span::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  color: var(--ember);
+}
+.link:hover span,
+.link:focus-visible span { transform: translateY(-100%); }
+.link[aria-current="page"] { color: var(--ember); }
+
+.burger {
+  display: none;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 72;
+}
+.burger span {
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 0.4s var(--ease-out), top 0.4s var(--ease-out);
+}
+.burger span:first-child { top: 17px; }
+.burger span:last-child { top: 25px; }
+.burger .x1 { top: 21px !important; transform: rotate(45deg); }
+.burger .x2 { top: 21px !important; transform: rotate(-45deg); }
+
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 69;
+  background: var(--ember);
+  color: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: var(--gutter);
+}
+.menuRow { overflow: hidden; }
+.menuLink {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  font-size: clamp(56px, 16vw, 140px);
+}
+.menuLink small { font: 600 12px/1 var(--font-body); margin-top: 1.2em; letter-spacing: 0.1em; }
+.menuFoot {
+  position: absolute;
+  bottom: calc(var(--gutter) + env(safe-area-inset-bottom));
+  left: var(--gutter);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  font: 600 13px/1 var(--font-body);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 760px) {
+  .nav { display: none; }
+  .burger { display: block; }
+  .header:has(+ .menu), .header { mix-blend-mode: normal; }
+}

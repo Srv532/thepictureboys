@@ -1,0 +1,44 @@
+.curtain {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  background: var(--ink-2);
+  display: grid;
+  place-items: center;
+  pointer-events: all;
+}
+.label {
+  font-size: clamp(48px, 12vw, 200px);
+  color: var(--paper);
+  text-transform: uppercase;
+}
+.frame {
+  position: absolute;
+  top: calc(var(--gutter) + 8px);
+  left: var(--gutter);
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font: 500 12px/1 var(--font-body);
+  letter-spacing: 0.2em;
+  color: var(--muted);
+}
+.rec {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--ember);
+  animation: blink 0.8s steps(2) infinite;
+}
+.bars::before,
+.bars::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 9vh;
+  background: #000;
+}
+.bars::before { top: 0; }
+.bars::after { bottom: 0; }
+@keyframes blink { 50% { opacity: 0; } }
