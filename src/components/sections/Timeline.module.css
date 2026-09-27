@@ -1,0 +1,10 @@
+.timeline { padding-block: clamp(90px, 12vw, 180px); }
+.list { position: relative; margin-top: clamp(40px, 6vw, 80px); padding-left: clamp(36px, 6vw, 90px); display: grid; gap: clamp(56px, 8vw, 110px); }
+.rail { position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: rgba(242, 236, 227, 0.12); }
+.fill { position: absolute; inset: 0; background: var(--ember); transform-origin: top; }
+.step { position: relative; display: grid; gap: 10px; max-width: 900px; }
+.dot { position: absolute; left: calc(-1 * clamp(36px, 6vw, 90px) + 2px); top: 6px; width: 14px; height: 14px; border-radius: 50%; background: var(--ember); box-shadow: 0 0 0 6px rgba(255, 90, 31, 0.2); }
+.when { font: 600 12px/1 var(--font-body); letter-spacing: 0.22em; text-transform: uppercase; color: var(--ember); }
+.step h3 { font-size: clamp(40px, 6vw, 100px); }
+.step p { max-width: 46ch; font-size: clamp(16px, 1.3vw, 20px); opacity: 0.75; }
+.idx { position: absolute; right: 0; top: 0; font: 400 clamp(60px, 10vw, 160px)/1 var(--font-display); opacity: 0.06; pointer-events: none; }

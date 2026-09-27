@@ -1,0 +1,49 @@
+.grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(12px, 2vw, 24px); align-items: start; }
+.single { grid-template-columns: minmax(0, 900px); justify-content: center; }
+.thumb { display: block; width: 100%; border-radius: 10px; overflow: hidden; }
+.thumb img { transition: transform 1.2s var(--ease-out); }
+.thumb:hover img { transform: scale(1.04); }
+.box {
+  position: fixed;
+  inset: 0;
+  z-index: 85;
+  background: rgba(5, 4, 3, 0.96);
+  display: grid;
+  place-items: center;
+  padding: clamp(16px, 4vw, 60px) clamp(16px, 4vw, 60px) 90px;
+  touch-action: pan-y;
+}
+.full {
+  max-width: 100%;
+  max-height: calc(100svh - 150px);
+  object-fit: contain;
+  border-radius: 4px;
+  cursor: grab;
+  user-select: none;
+}
+.bar {
+  position: absolute;
+  bottom: calc(24px + env(safe-area-inset-bottom));
+  left: 50%;
+  translate: -50% 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 6px 6px 18px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  font: 600 12px/1 var(--font-body);
+  letter-spacing: 0.14em;
+}
+.bar button {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 16px;
+  transition: background 0.2s;
+}
+.bar button:hover { background: rgba(255, 255, 255, 0.14); }
+@media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }

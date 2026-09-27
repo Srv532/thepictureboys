@@ -1,0 +1,40 @@
+.filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+.chip {
+  position: relative;
+  padding: 11px 18px;
+  border-radius: 999px;
+  border: 1px solid rgba(155, 148, 138, 0.35);
+  font: 500 13px/1 var(--font-body);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  transition: color 0.3s, border-color 0.3s;
+}
+.chip[aria-pressed="true"] { color: var(--ink); border-color: transparent; }
+.chip:hover { border-color: var(--ember); }
+.chipBg { position: absolute; inset: 0; border-radius: inherit; background: var(--ember); }
+.chipText { position: relative; }
+.chipText sup { font-size: 9px; opacity: 0.7; margin-left: 2px; }
+.grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(28px, 4vw, 56px) clamp(16px, 2vw, 28px);
+  align-items: start;
+}
+.grid li:nth-child(3n + 2) { margin-top: clamp(0px, 6vw, 90px); }
+@media (max-width: 1100px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .grid li:nth-child(3n + 2) { margin-top: 0; }
+  .grid li:nth-child(2n) { margin-top: clamp(0px, 8vw, 80px); }
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+  .grid li:nth-child(2n) { margin-top: 0; }
+}
