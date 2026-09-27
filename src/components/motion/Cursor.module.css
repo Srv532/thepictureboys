@@ -1,0 +1,33 @@
+.dot,
+.ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 100;
+  border-radius: 50%;
+  translate: -50% -50%;
+}
+.dot {
+  width: 6px;
+  height: 6px;
+  background: var(--paper);
+  mix-blend-mode: difference;
+}
+.ring {
+  border: 1px solid rgba(242, 236, 227, 0.6);
+  display: grid;
+  place-items: center;
+  mix-blend-mode: difference;
+}
+.labelled {
+  background: var(--paper);
+  border-color: transparent;
+  mix-blend-mode: normal;
+}
+.labelled span {
+  font: 600 11px/1 var(--font-body);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink);
+}
